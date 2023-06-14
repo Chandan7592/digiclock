@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+<title>This is Table</title>
+<style>
+	#clk{
+		width: 600px;
+		height: 180px;
+		border: 15px solid rgb(142, 185, 250);
+		border-radius: 0px;
+		margin: 0px auto;
+		text-align: center;
+		justify-content: center;
+		font-size: 150px;
+		color: white;
+	}
+
+	.watch{
+		width: 630px;
+		height: 212px;
+		background-color: black;
+		padding: 0px;
+		margin: 0px auto;
+		border: 20px solid blue;
+		border-radius: 0px;
+	}
+	.btn{	width: 660px;
+		height: 30px;
+		background-color: black;
+		margin: 0px auto;
+		border: 5px solid rgb(142, 185, 250);	
+	}
+
+	.btn button{width: 328px; height: 30px; margin: 0px auto;}
+
+
+</style>
+</head>
+<body>
+	<div class="watch">
+	<div id="clk"></div>
+	</div>
+	<div class="btn">
+	<button onclick="stop()">STOP WATCH</button>
+	<button onclick="start()">START WATCH</button>
+	</div>
+	<script>
+		function time(){
+			var d = new Date();
+			var hr = d.getHours();
+			var min = d.getMinutes();
+			var sec = d.getSeconds();
+			document.getElementById("clk").innerHTML = hr + ":" + min + ":" + sec ; 
+		}
+		
+		var a;
+		function start(){
+		a = setInterval(time, 1000);
+		}
+
+		function stop(){
+		clearInterval(a)
+		}
+	</script>
+</body>
